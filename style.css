@@ -1,0 +1,268 @@
+html, body {
+  color: white;
+  margin: 0;
+  font-size: calc(13px + 0.2vw);
+}
+
+.header {
+  background-image: url("resources/header.jpg");
+  height: 28vw;
+  background-size: cover;
+}
+.header .header-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  padding-top: 3rem;
+}
+.header .header-text img {
+  height: 15vw;
+}
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+}
+
+.articles {
+  background-color: #c8e2f1;
+}
+.articles .article {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.articles .article img {
+  width: 6vw;
+}
+.articles .article .article-title {
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.cards {
+  height: 12vw;
+  min-height: 200px;
+}
+.cards .card {
+  padding-top: 0.6rem;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+}
+.cards .card .card-title {
+  width: 100%;
+  height: 6vw;
+  clear: both;
+}
+.cards .card .card-title .title-bolder {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.cards .card .card-title .title-bold {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.cards .card .card-title div {
+  float: right;
+  clear: both;
+}
+.cards .card p {
+  margin: auto 20px;
+}
+.cards .opacity-1 {
+  background-color: #e0eef6;
+}
+.cards .opacity-2 {
+  background-color: #b9d9ea;
+}
+.cards .opacity-3 {
+  background-color: #a5cee5;
+}
+.cards .opacity-4 {
+  background-color: #91c3df;
+}
+
+.bottom {
+  width: 100%;
+  background-color: #a4cee5;
+  padding-top: 20px;
+}
+.bottom .carousel {
+  width: 100%;
+  height: 55vh;
+  cursor: pointer;
+  position: relative;
+  background-color: #7db8d9;
+}
+.bottom .carousel #background {
+  width: 100%;
+  height: 100%;
+}
+.bottom .carousel #ballon {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.bottom .carousel .back-icon img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.bottom .carousel .next-icon img {
+  width: 50px;
+  height: 50px;
+  right: 0;
+  position: absolute;
+  top: 50%;
+}
+.bottom .inscrire {
+  height: 20%;
+  height: 12vh;
+  background-color: #a4cee5;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom .inscrire p {
+  font-size: 1.2rem;
+}
+.bottom .inscrire form input {
+  height: 1.8em;
+  border-radius: 3px;
+  border: none;
+  margin: auto 10px;
+}
+.bottom .inscrire form input[type=text] {
+  width: 12vw;
+  min-width: 200px;
+  padding-left: 10px;
+  color: grey;
+}
+.bottom .inscrire form input[type=submit] {
+  width: 4vw;
+  min-width: 70px;
+  background-color: #368bba;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  background-color: #7db8d9;
+  position: relative;
+  font-size: 0.8rem;
+}
+.footer div {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 800px) {
+  html, body {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .header {
+    height: 45vw;
+  }
+
+  .bottom .inscrire {
+    height: 10vh;
+  }
+
+  .articles {
+    display: block;
+  }
+  .articles .article {
+    width: 100%;
+  }
+  .articles .article img {
+    min-width: 50px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    min-height: 290px;
+  }
+  .cards .card {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  html, body {
+    font-size: 10px;
+  }
+
+  .cards {
+    display: block;
+    width: 100%;
+    height: 30vw;
+    min-height: 360px;
+  }
+  .cards .card {
+    width: 100%;
+    height: 80px;
+  }
+
+  .bottom .carousel {
+    height: 30vh;
+    min-height: 30vh;
+  }
+}
+@media (max-width: 380px) {
+  html, body {
+    font-size: 9px;
+  }
+
+  .cards {
+    min-height: 400px;
+  }
+  .cards .card {
+    height: 92.5px;
+  }
+}
+@keyframes example {
+  from {
+    left: 30px;
+  }
+  to {
+    left: 900px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

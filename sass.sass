@@ -1,0 +1,246 @@
+$header-image: "resources/header.jpg"
+$cloud-image:"resources/msl-cloud.png"
+
+
+=background-image($url,$height)
+  background-image: url($url)
+  height: $height
+  background-size: cover
+
+
+html, body
+    color: white
+    margin:0
+    font-size: calc(13px + 0.2vw)
+
+.header
+  +background-image($header-image,28vw)
+  .header-text
+    position: relative
+    display: flex
+    justify-content: center
+    z-index: 10
+    padding-top: 3rem
+    img
+        height: 15vw
+
+.container
+    max-width: 70%
+    margin: 0 auto
+    position: relative
+    border-radius: 50px
+    overflow: hidden
+
+.section 
+    width: 100%
+    display: flex
+    justify-content: space-around
+    height: auto
+
+.articles
+    background-color: rgb(200,226,241)
+    .article
+        display: flex
+        width: 30%
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        padding: 0.5rem
+        img
+            width: 6vw
+        .article-title
+            font-weight: bold
+            margin: 10px auto
+
+.cards
+    height: 12vw
+    min-height: 200px
+    .card
+        padding-top: 0.6rem
+        padding-bottom: 0.5rem
+        overflow: hidden
+        .card-title
+            width: 100%
+            height: 6vw
+            clear: both
+            .title-bolder
+                font-size: 2rem
+                font-weight: bolder
+            .title-bold
+                font-size: 1.5rem
+                font-weight: bold
+            div
+                float: right
+                clear: both
+        p 
+            margin: auto 20px
+
+    
+    .opacity-1
+       background-color: rgb(224,238,246)
+    .opacity-2
+       background-color: rgb(185,217,234)
+    .opacity-3
+       background-color: rgb(165,206,229)
+    .opacity-4
+       background-color: rgb(145,195,223)
+
+   
+.bottom
+    //+background-image($carousel-image,35vw)
+    width: 100%
+    background-color: rgb(164,206,229)
+    padding-top: 20px
+    .carousel
+        width: 100%
+        height: 55vh
+        cursor: pointer
+        position: relative
+        background-color: rgb(125,184,217)
+        #background 
+            width: 100%
+            height:100%
+        #ballon
+            width: 50px
+            height: 50px
+            position: absolute
+            top : 30px
+            left: 20px
+
+            animation-name: example
+            animation-duration: 10s
+            animation-direction: alternate
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+            -webkit-animation-name: example
+            -webkit-animation-duration: 10s
+            -webkit-animation-timing-function: linear
+            -webkit-animation-iteration-count: infinite
+            -webkit-animation-direction: alternate
+        .back-icon
+            img
+                width: 50px
+                height: 50px
+                position: absolute
+                left: 0
+                top: 50%
+               
+        .next-icon
+            img
+                width: 50px
+                height: 50px
+                right: 0
+                position: absolute
+                top: 50%
+                
+    .inscrire
+        height: 20%
+        height: 12vh
+        background-color: rgb(164,206,229)
+        padding-top: 10px
+        display: flex
+        flex-direction: column
+        align-items: center
+        p 
+            font-size: 1.2rem
+        form
+            input
+                height: 1.8em
+                border-radius: 3px
+                border: none
+                margin: auto 10px
+            input[type='text']
+                width: 12vw
+                min-width: 200px
+                padding-left: 10px
+                color: grey
+            input[type='submit']
+                width: 4vw
+                min-width: 70px
+                background-color: rgb(54,139,186)
+
+
+.footer
+    display: flex
+    justify-content: center  
+    height: 2rem
+    background-color: rgb(125,184,217)
+    position: relative
+    font-size: 0.8rem
+    div 
+        position: absolute
+        bottom: 0
+
+
+
+            
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 800px)
+    html, body
+        font-size: 12px
+    .container
+        width: 100%
+        max-width: 100%
+        border-radius: 0
+    .header
+        height: 45vw
+    
+    .bottom
+        .inscrire
+            height: 10vh
+
+    .articles
+        display: block
+        .article
+            width: 100%
+            img
+                min-width: 50px
+    .cards
+        flex-wrap: wrap
+        min-height: 290px
+        .card
+            width: 50%
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px)
+    html, body
+        font-size: 10px
+    .cards
+        display: block
+        width: 100%
+        height: 30vw
+        min-height: 360px
+        $height : 320px
+        .card
+            width: 100%
+            height: $height / 4
+
+    
+    .bottom
+        .carousel
+            height: 30vh
+            min-height: 30vh
+
+
+// Small devices (potrait phones, 576px and up)
+@media (max-width: 380px)
+    html, body
+        font-size: 9px
+    .cards
+        min-height: 400px
+        $height_sm: 370px
+        .card
+            height: $height_sm / 4
+
+
+            
+
+@keyframes example 
+  from 
+      left: 30px
+  to 
+      left: 900px
